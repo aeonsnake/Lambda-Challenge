@@ -5,11 +5,21 @@ After writing your function uncomment the matching function reference at the bot
 */
 
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
-
+var world = 'Hello World!';
 function helloWorld() {
-
+ return world
 }
-
+function lambdaSchool(num){
+    // noinspection JSAnnotator
+    if (num % 3 == 0 && num % 5 == 0)
+        return "Lambda School";
+    else if (num % 3 == 0)
+        return 'Lambda';
+    else if (num % 5 == 0)
+        return 'School';
+    return num
+    }
+lambdaSchool(15)
 /*
 2. Write a function called lambdaSchool that has a single parameter called num.
      num will be a positive integer.
@@ -23,9 +33,6 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
-
-}
 
 /*
 3. Write a function called longestString that has a single parameter called strs.
@@ -38,9 +45,16 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
-
+function longestString(strs){
+    longest = "";
+    for (let i = 0; i<strs.length; i++){
+        const element = strs[i];
+        if (element.length > longest.length)
+            longest = element;
+    }
+    return longest;
 }
+
 
 /*
 4. Write a function called computeUserAverageAge that has a single parameter called users
@@ -63,8 +77,13 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
-
+function computeUserAverageAge(users) {
+totalAge = 0;
+for (let i = 0; i < users.length; i++) {
+    const element = users[i];
+    totalAge += element.age;
+}
+return Math.round(totalAge / users.length)
 }
 
 module.exports = {
